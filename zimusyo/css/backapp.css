@@ -1,0 +1,247 @@
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+html, body{
+  overflow-x: hidden;
+}
+body{
+	 font-family: "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif;
+    overflow-x: hidden;
+    margin: 0;
+  background-image: url(../img/bacapp_kabegami.webp);
+  color: #333;
+    min-height: 100vh;
+}
+.ue_header{
+  background-color:#FF9999;
+  font-size: 23px;
+}
+ue_header_text{
+  color: #4A4A4A;
+}
+  .main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    text-align: center;
+    padding: 2rem;
+    opacity: 0;
+    transform: scale(0.96);
+    transition: opacity 1s ease 0.4s, transform 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.4s;
+  }
+
+  body.is-loaded .main-content {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .replay-btn {
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    background: #38bdf8;
+    border: none;
+    border-radius: 9999px;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(56, 189, 248, 0.4);
+    transition: transform 0.2s, background 0.2s;
+  }
+
+
+  /* オープニングの雲オーバーレイ */
+  .cloud-curtain {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    pointer-events: none;
+    overflow: hidden;
+    background: rgba(240, 249, 255, 0.95);
+    transition: background 1.2s ease 0.3s;
+  }
+
+  body.is-loaded .cloud-curtain {
+    background: rgba(240, 249, 255, 0);
+  }
+
+  /* 雲パーツ共通スタイル */
+  .cloud {
+    position: absolute;
+    color: #ffffff;
+    text-shadow: 0 10px 30px rgba(135, 206, 235, 0.6);
+    user-select: none;
+    line-height: 1;
+    transition: transform 1.6s cubic-bezier(0.25, 1, 0.5, 1), opacity 1.4s ease;
+  }
+
+  /* 左側へはける雲グループ */
+  .cloud.left-1 {
+    top: -10%;
+    left: -5%;
+    font-size: 32vw;
+    opacity: 1;
+  }
+  .cloud.left-2 {
+    top: 30%;
+    left: 5%;
+    font-size: 36vw;
+    opacity: 0.95;
+    transition-delay: 0.1s;
+  }
+  .cloud.left-3 {
+    bottom: -15%;
+    left: -10%;
+    font-size: 34vw;
+    opacity: 0.9;
+    transition-delay: 0.05s;
+  }
+
+  /* 右側へはける雲グループ */
+  .cloud.right-1 {
+    top: -5%;
+    right: -5%;
+    font-size: 34vw;
+    opacity: 1;
+  }
+  .cloud.right-2 {
+    top: 25%;
+    right: 0%;
+    font-size: 38vw;
+    opacity: 0.95;
+    transition-delay: 0.12s;
+  }
+  .cloud.right-3 {
+    bottom: -10%;
+    right: -8%;
+    font-size: 32vw;
+    opacity: 0.9;
+    transition-delay: 0.08s;
+  }
+
+  /* アニメーション発火後の移動先 */
+  body.is-loaded .cloud.left-1,
+  body.is-loaded .cloud.left-2,
+  body.is-loaded .cloud.left-3 {
+    transform: translateX(-120%) scale(1.1);
+    opacity: 0;
+  }
+
+  body.is-loaded .cloud.right-1,
+  body.is-loaded .cloud.right-2,
+  body.is-loaded .cloud.right-3 {
+    transform: translateX(120%) scale(1.1);
+    opacity: 0;
+  }
+
+.dark-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 100, 255, 0.3) 100%);
+  pointer-events: none; 
+  z-index: 9999;
+}
+header{
+     background-image: url(../img/haikei.webp);
+}
+.raiver_tyuou{
+  display: flex;
+  justify-content: center;
+  gap:33px;
+}
+.raiver{
+    white-space: nowrap; 
+margin-right:0px ; 
+margin-top: 56px;
+  max-width: 100%;
+  width: 230px;
+  height: auto;
+ 
+}
+.raiver1{
+   white-space: nowrap; 
+margin-right:24px ; 
+margin-top: 56px;
+  max-width: 100%;
+  width: 230px;
+  height: auto;
+}
+.aikon{
+	width: 230px;
+	height: auto;
+}
+.kousiki{
+	width: 388px;
+	height: auto;
+}
+.header{
+    text-align: center;
+    font-size: 69px;
+}
+@font-face {
+  font-family: "DotGothic16";
+  src: url("./fonts/DotGothic16-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+.text{
+ font-family: "DotGothic16", sans-serif;
+  font-size: 28px;
+  text-align: center;
+  color: #0000ff;
+}
+.syozoku_box{
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  font-size: 28px;
+  text-align: center;
+  color: #000;
+}
+.syozoku_meritto
+.syozoku_nagare{
+   white-space: nowrap;
+   font-family: "DotGothic16", sans-serif;
+  display: flex;
+}
+/*.syozoku_nagare{
+  white-space: nowrap;
+ font-family: "DotGothic16", sans-serif;
+  font-size: 28px;
+  text-align: center;
+  color: #0000ff;
+}*/
+footer{
+   font-size: 69px;
+    background-color: #FFFFCC;
+}
+.footer_mail{
+  font-size: 20px;
+}
+.all_space{
+	margin-bottom: 30px;
+}
+.menber_form{
+    font-size: 54px;
+    background-color: bisque;
+}
+.masyumaro{
+  width: 388px;
+	height: auto;
+}
+.form_toiawase{
+    font-size: 80px;
+}
+.tyuou{
+    text-align: center;
+}
+ @media (max-width: 480px){
+
+}
